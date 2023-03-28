@@ -14,10 +14,10 @@ export function Footer({ title, description,  socials, menus, copyright }) {
       <div className="container mx-auto">
         <div className="flex flex-wrap pt-6 text-center md:justify-center">
           <div className="w-full px-4 lg:w-6/12">
-            <Typography variant="h4" className="mb-4" color="gray">
+            <Typography variant="h2" className="mb-4" color="gray">
               {title}
             </Typography>
-            <Typography className="font-normal text-blue-gray-500">
+            <Typography className="font-normal text-blue-gray-500 text-2xl">
               {description}
             </Typography>
             <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-center">
@@ -44,7 +44,7 @@ export function Footer({ title, description,  socials, menus, copyright }) {
           <div className="mx-auto w-full px-4 text-center">
             <Typography
               variant="small"
-              className="font-normal text-blue-gray-500"
+              className="font-normal text-blue-gray-500 text-lg"
             >
               {copyright}
             </Typography>
@@ -68,12 +68,12 @@ Footer.defaultProps = {
     {
       color: "green",
       name: "callsvg",
-      path: "tel:+91 9442666074",
+      path: "tel:+91 9486552761",
     },
     {
       color: "blue",
       name: "whatsappsvg",
-      path: "tel:+91 9442666074",
+      path: "https://wa.me/919442666074",
     },
     {
       color: "red",

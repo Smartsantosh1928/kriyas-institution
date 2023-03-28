@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Telegramsvg from '/img/logotype.svg'
 import Hourglass from '/img/hourglass.svg'
 import brochuresvg from '/img/brochure.svg'
@@ -10,6 +10,8 @@ import {BsLinkedin} from 'react-icons/bs'
 import { BriefcaseIcon } from "@heroicons/react/24/solid";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Coursecard from '../card/courseCard';
+import { coursedata, tndata } from '../data/course-data';
 
 export function Home() {
     const year = new Date().getFullYear();
@@ -42,15 +44,27 @@ export function Home() {
         }
     }
 
+    const [popup,setpopup] = useState(true)
+    const handlePopup = () => {
+      setpopup(!popup)
+    }
+
+    useEffect(() => {
+      setTimeout(() => {
+        setpopup(!popup)
+      }, 5000);
+    },[])
 
     return ( 
         <>
             <div className='w-full h-auto flex flex-row bg-[#f5f5f5] p-5'>
+                <img src="/img/logo.png" alt="LOGO" className='w-12 h-12 mr-3'/>
                 <span className='text-2xl md:text-5xl'>Kriya's Institution</span>
-                    <a href="http://" target="_blank" className='ml-auto flex flex-row border bg-blue-300 p-2 rounded-3xl'>
+                    <a href="http://" target="_blank" className='ml-auto flex flex-row border hover:bg-blue-300 border-none p-2 rounded-3xl'>
                         <img src={Telegramsvg} alt="Telegram" className='w-10 h-10' />
                         <span className='text-3xl  hidden md:block'>Telegram Channel</span>
                     </a>
+                <button className='bg-blue-400 rounded-lg text-2xl m-2 p-2 text-white hover:bg-blue-600' onClick={handlePopup}>Register</button>
             </div>
         <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
             <div className="absolute top-0 h-full w-full bg-[url('/img/teamwork.jpg')] bg-cover" />
@@ -65,7 +79,7 @@ export function Home() {
                 <span className='md:text-3xl mt-3 text-green-600 text-4xl flex items-center justify-center'>
                     Registrations Opens for this Academic Year {year} - {year + 1}✨
                 </span>
-                <Button onClick={hanndleDownload} variant="gradient" className="rounded-2xl mt-10 ml-60 bg-blue-500 ">
+                <Button onClick={hanndleDownload} variant="gradient" className="rounded-2xl mt-10 md:ml-60 bg-blue-500 ">
                 <span className='text-2xl flex mt-2'>
                     Download Brochure
                     <img src={brochuresvg} alt="Brochure" className='pl-3 -mr-10 -mb-5' />
@@ -205,58 +219,82 @@ export function Home() {
           </div>
         </div>
       </section>
-      <div className="container mx-auto p-4">
+      <div className={`container mx-auto p-4 ${popup ? 'hidden' : 'block'}`}>
         <Card className="absolute top-2/4 left-2/4 w-full max-w-[24rem] -translate-y-2/4 -translate-x-2/4">
           <CardHeader
             variant="gradient"
             color="blue"
             className="mb-4 grid h-28 place-items-center p-5 bg-blue-400"
           >
+            <button onClick={handlePopup} className='p-1 px-2 hover:bg-[#ffffff] hover:opacity-50 hover:text-black rounded-full ml-auto -mt-2 text-2xl'>&#10006;</button>
             <Typography variant="h3">
               Sign Up
             </Typography>
           </CardHeader>
           <CardBody className="flex flex-col gap-4 px-5 w-full">
-            <Input variant="standard" type="text" label="Name" size="lg" name="stud_name" onChange={handleChange}/>
-            <Input variant="standard" type="email" label="Email" size="lg" name="stud_email" onChange={handleChange}/>
-            <Input variant="standard" type="text" label="Phone" size="lg" name="stud_phone" onChange={handleChange}/>
-            <Input
-              variant="standard"
+            <span>Name</span>
+            <input type="text" label="Name" size="lg" name="stud_name" onChange={handleChange} placeholder="Type your Name here" className='outline rounded-md p-2 outline-blue-300'/>
+            <span>Email</span>
+            <input type="email" label="Email" size="lg" name="stud_email" onChange={handleChange} placeholder="Type your Email here" className='outline rounded-md p-2 outline-blue-300'/>
+            <span>Mobile Number</span>
+            <input type="text" label="Phone" size="lg" name="stud_phone" onChange={handleChange} placeholder="Type your Mobile Number here" className='outline rounded-md p-2 outline-blue-300'/>
+            <span>Password</span>
+            <input
               type="password"
               label="Password"
               name="stud_password"
               size="lg"
               onChange={handleChange}
-            />
-            <Select variant="outlined" label="Select Class" name="stud_std" value={details.stud_std} onChange={handleChange}>
-              <Option value="Class 12+">Class 12+</Option>
-              <Option value="Class 12" >Class 12</Option>
-              <Option value="Class 11">Class 11</Option>
-              <Option value="Class 10">Class 10</Option>
-            </Select>
-            <div className="-ml-2.5">
-              <Checkbox label="I agree the Terms and Conditions" checked={details.terms} name="terms" onChange={(e) => {setDetails(e.target.checked)}}/>
+              placeholder="Password"
+              className='outline rounded-md p-2 outline-blue-300'
+              />
+              <span>Select Standard</span>
+            <select label="Select Class" name="stud_std" value={details.stud_std} onChange={handleChange} className='outline rounded-md p-2 outline-blue-300'>
+              <option value="Class 10">Class 10</option>
+              <option value="Class 11">Class 11</option>
+              <option value="Class 12">Class 12</option>
+              <option value="NEET">NEET</option>
+            </select>
+            <div className="-ml-2.5 flex">
+              <checkbox label="I agree the Terms and Conditions" checked={details.terms} name="terms" onChange={(e) => {setDetails(e.target.checked)}}/>
             </div>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button variant="gradient" fullWidth>
+            <button className='px-5 p-2 text-white text-2xl ml-36 bg-blue-400 rounded-lg my-5'>
               Sign Up
-            </Button>
-            <Typography variant="small" className="mt-6 flex justify-center">
-              Already have an account?
-              <Link to="/sign-in">
-                <Typography
-                  as="span"
-                  variant="small"
-                  color="blue"
-                  className="ml-1 font-bold"
-                >
-                  Sign in
-                </Typography>
-              </Link>
-            </Typography>
-          </CardFooter>
+            </button>
+         </CardFooter>
         </Card>
+      </div>
+      <div className='w-full h-full grid grid-cols-1 md:grid-cols-4 p-10 -mt-16 mb-24 gap-10'>
+          {
+            coursedata.map(({name,time,batch,fee,img}) => {
+              return(
+                <Coursecard
+                name={name}
+                time={time}
+                batch={batch}
+                fee={fee}
+                img={img}
+                />
+              )
+            })
+          }
+      </div>
+      <div className='w-full h-full grid grid-cols-1 md:grid-cols-3 p-10 -mt-16 mb-24 md:gap-60 gap-10'>
+      {
+        tndata.map(({name,time,batch,fee,img}) => {
+          return(
+            <Coursecard
+            name={name}
+            time={time}
+            batch={batch}
+            fee={fee}
+            img={img}
+            />
+          )
+        })
+      }
       </div>
       <div className="bg-blue-gray-50/50">
         <Footer />
