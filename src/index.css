@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body{
+    overflow: hidden;
     font-family: 'Edu NSW ACT Foundation', cursive;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
 }

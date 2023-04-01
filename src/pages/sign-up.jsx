@@ -77,7 +77,7 @@ export function SignUp() {
           </CardBody>
           <CardFooter className="pt-0">
             <Button variant="gradient" fullWidth>
-              Sign Up
+              Register
             </Button>
             <Typography variant="small" className="mt-6 flex justify-center">
               Already have an account?
