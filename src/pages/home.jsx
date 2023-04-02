@@ -45,8 +45,8 @@ export function Home() {
         const { name, value } = e.target
         setDetails({ ...details, [name]: value })
         console.log(details);
-        }
     }
+  }
 
     const [isloading,setisloading] = useState(false)
     const scriptURL = "https://script.google.com/macros/s/AKfycbxqePwBS9AriYdbi69jTBdiftstxuPW5cgkoLfG6IZ_w3iidjSHZoqUtaBrXFFoOrs_/exec"
@@ -122,7 +122,7 @@ export function Home() {
             <div className='w-full h-auto flex md:flex-row bg-[#f5f5f5] p-5 flex-col edu'>
                 <img src="/img/logo.png" alt="LOGO" className='w-28 h-28 md:w-40 md:h-40 mr-3'/>
                 <span className='text-4xl -mt-24 ml-32 text-start md:ml-0 md:text-6xl md:mt-12'>Kriya's Institution</span>
-                    <a href="http://t.me/" target="_blank" className='ml-auto -mt-12 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
+                    <a href="http://t.me/+0UkpIEEdQX4zZTQ1" target="_blank" className='ml-auto -mr-5 -mt-12 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
                         <img src={Telegramsvg} alt="Telegram" className='w-10 h-10 hover:bg-[#239bcd] rounded-lg' />
                         <span className='text-3xl  hidden md:block'>Telegram Channel</span>
                     </a>
@@ -202,6 +202,7 @@ export function Home() {
             <input type="text" label="Phone" size="lg" name="stud_phone" onChange={handleChange} placeholder="Type your Mobile Number here" className='outline rounded-md p-2 outline-blue-300'/>
               <span>Select Standard</span>
             <select label="Select Class" name="stud_std" value={details.stud_std} onChange={handleChange} className='outline rounded-md p-2 outline-blue-300'>
+              <option value="" disabled selected>Select Standard</option>
               <option value="Class 11 (CBSE)">Class 11 ( CBSE )</option>
               <option value="Class 12 (CBSE)">Class 12 ( CBSE )</option>
               <option value="Class 11 (Tam)">Class 11 ( Medium:Tam )</option>

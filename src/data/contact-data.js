@@ -8,7 +8,7 @@ export const contactData = [
     title: "Live Sessions📌",
     icon: VideoCameraIcon,
     description:
-      "During the live sessions we have a Q&A sessions.Where you can ask questions and get answers from the teacher and other students in the session.",
+      "During the live sessions we have Q&A sessions.Where you can ask questions and get answers from the teacher and other students in the session.",
   },
   {
     title: "Online Tutions🎥",

@@ -1,5 +1,4 @@
-import { Redirect } from 'react-dom';
-
+import { useNavigate,Routes,Route } from 'react-router-dom';
 import {
   Card,
   CardHeader,
@@ -11,8 +10,12 @@ import {
 } from "@material-tailwind/react";
 import { SimpleFooter } from "./simple-footer";
 import { useState } from "react";
+import Swal from 'sweetalert2';
+import Upload from "./upload";
 
 export function SignUp() {
+
+  const navigate = useNavigate();
 
   const [details, setDetails] = useState({})
   const handleChange = (e) => {
@@ -28,9 +31,11 @@ export function SignUp() {
     }
   }
 
-  const handlesubmit = () => {
-    if(true)
-    return <Redirect to="/upload" />;
+  const handlelogin = () => {
+    if(details.user == "admin" && details.pass == "maheswari@123")
+    navigate('/upload')
+    else
+    new Swal('Invalid Credentials', 'Please Enter Valid Credentials', 'error')
   }
 
   // fetch('https://plum-sparkling-squid.cyclic.app/register', {
@@ -63,12 +68,15 @@ export function SignUp() {
             <input type="password" name="pass" id="pass" placeholder="Type Your Paswword Here" onChange={handleChange} className="border border-blue-500 p-2 rounded-xl" />
           </CardBody>
           <CardFooter className="pt-0 text-center p-10">
-            <Button variant="gradient" className="bg-blue-500 rounded-2xl p-3 px-3" onClick={handlesubmit}>
+            <Button variant="gradient" className="bg-blue-500 rounded-2xl p-3 px-3" onClick={handlelogin}>
               Register
             </Button>
           </CardFooter>
         </Card>
       </div>
+      {/* <Routes>
+        <Route path="/upload" element={<Upload/>} />
+      </Routes> */}
       <div className="container absolute bottom-6 left-2/4 z-10 mx-auto -translate-x-2/4 text-white">
         <SimpleFooter />
       </div>

@@ -87,7 +87,7 @@ Footer.defaultProps = {
       <span className="edu">
         Kriya's Institution{" "} 
       </span> 
-        By {" "} 
+        {/* By {" "} 
       <a
         href="https://www.unijactech.com"
         target="_blank"
@@ -95,7 +95,7 @@ Footer.defaultProps = {
       >
         Unijac Technologies
       </a>
-      .
+      . */}
     </>
   ),
 };
