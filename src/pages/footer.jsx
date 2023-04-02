@@ -14,7 +14,7 @@ export function Footer({ title, description,  socials, menus, copyright }) {
       <div className="container mx-auto">
         <div className="flex flex-wrap pt-6 text-center md:justify-center">
           <div className="w-full px-4 lg:w-6/12">
-            <Typography variant="h2" className="mb-4" color="gray">
+            <Typography variant="h2" className="mb-4 edu" color="gray">
               {title}
             </Typography>
             <Typography className="font-normal text-blue-gray-500 text-2xl">
@@ -83,7 +83,11 @@ Footer.defaultProps = {
   ],
   copyright: (
     <>
-      Copyright © {year} Kriya's Institution{" "} By {" "} 
+      Copyright © {year} {" "}
+      <span className="edu">
+        Kriya's Institution{" "} 
+      </span> 
+        By {" "} 
       <a
         href="https://www.unijactech.com"
         target="_blank"

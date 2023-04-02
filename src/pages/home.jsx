@@ -116,7 +116,7 @@ export function Home() {
 
     return ( 
         <>
-            <div className='w-full h-auto flex md:flex-row bg-[#f5f5f5] p-5 flex-col'>
+            <div className='w-full h-auto flex md:flex-row bg-[#f5f5f5] p-5 flex-col edu'>
                 <img src="/img/logo.png" alt="LOGO" className='w-28 h-28 md:w-40 md:h-40 mr-3'/>
                 <span className='text-4xl -mt-24 ml-32 md:ml-0 md:text-6xl md:mt-12'>Kriya's Institution</span>
                     <a href="http://t.me/" target="_blank" className='ml-auto -mt-16 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
@@ -129,18 +129,17 @@ export function Home() {
             <div className="absolute top-0 h-full w-full bg-[url('/img/teamwork.jpg')] bg-cover" />
             <div className="absolute top-0 h-full w-full bg-black/50 bg-cover bg-center" />
         </div>
-        <div className='w-full h-auto text-4xl bg-[#f5f5f5] text-blue-800 p-5 grid grid-cols-1 md:grid-cols-2'>
+        <div className='w-full h-auto text-4xl bg-[#f5f5f5] text-green-600 p-5 grid grid-cols-1 md:grid-cols-2'>
             <div className='md:mt-24 mt-0'>
                 <div className='flex flex-row items-center justify-center'>
-                    <span >Only for Chemistry</span>
-                    <img src={Hourglass} alt="Chemistry" className='ml-1 mt-5 w-16 h-16'/>
+                    <span className='text-3xl md:text-4xl'>Only for Chemistry</span>
+                    <img src={Hourglass} alt="Chemistry" className='md:ml-1 mt-5 w-16 h-16'/>
                 </div>
-                <span className='md:text-3xl mt-3 text-green-600 text-xl flex justify-center items-center flex-col md:flex-row'>
-                    Registrations Opens for this Academic Year
-                    <p><pre> </pre>{year} - {year + 1}✨</p>
+                <span className='md:text-2xl font-bold mt-10 md:mt-3 text-sm flex justify-center items-center flex-col md:flex-row'>
+                    Registrations Opens for the Year {" "} {year} - {year + 1}✨
                 </span>
                 <Button onClick={hanndleDownload} variant="gradient" className="rounded-2xl mt-10 md:ml-48 bg-blue-500 ">
-                <span className='text-2xl flex mt-2'>
+                <span className='text-lg md:text-2xl flex mt-2'>
                     Download Brochure
                     <img src={brochuresvg} alt="Brochure" className='pl-3 -mr-10 -mb-5' />
                 </span>
@@ -149,6 +148,13 @@ export function Home() {
             <div className='p-5 mt-12 md:-mt-10 w-full'>
                 <img src="/img/student.png" alt="student" className='h-auto w-auto object-cover'/>
             </div>
+        </div>
+        <div className='flex justify-center items-center text-center p-1'>
+        <span className='text-xl text-green-600 font-bold '>
+          Contact for more Info : {" "}
+           <a href="tel:9486552761" className='hover:text-blue-300'>+91 9486552761</a>{" & "}
+           <a href="mailto:maheswarivaseekaran@gmail.com" className='hover:text-blue-300'>maheswarivaseekaran@gmail.com</a>
+        </span>
         </div>
         <div className="mx-auto mt-20 mb-48 max-w-5xl gap-16 grid grid-cols-1 md:grid-cols-2">
             {contactData.map(({ title, icon, description }) => (
@@ -163,10 +169,10 @@ export function Home() {
                     className: "w-5 h-5",
                   })}
                 </div>
-                <Typography variant="h5" color="blue-gray" className="mb-2 text-3xl md:text-4xl">
+                <Typography variant="h5" color="blue-gray" className="mb-2 edu text-3xl md:text-4xl">
                   {title}
                 </Typography>
-                <Typography className="text-2xl text-blue-gray-600">
+                <Typography className="text-2xl text-blue-gray-600 p-1">
                   {description}
                 </Typography>
               </Card>
@@ -288,7 +294,7 @@ export function Home() {
                         variant="small"
                         className="font-normal text-blue-gray-500"
                       >
-                        Degrees
+                        Academic achievements
                       </Typography>
                     </div>
                     <div className="mr-4 p-3 text-center">
@@ -303,7 +309,7 @@ export function Home() {
                         variant="small"
                         className="font-normal text-blue-gray-500"
                       >
-                        Experience
+                        Years of Experience
                       </Typography>
                     </div>
                   </div>

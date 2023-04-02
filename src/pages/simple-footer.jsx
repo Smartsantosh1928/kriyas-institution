@@ -14,7 +14,7 @@ export function SimpleFooter({ brandName, brandLink, routes }) {
           <a
             href={brandLink}
             target="_blank"
-            className="transition-colors hover:text-blue-500"
+            className="transition-colors hover:text-blue-500 edu"
           >
             {brandName}
           </a>{" "}

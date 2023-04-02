@@ -18,7 +18,7 @@ function Coursecard({name,time,batch,fee,img}) {
             </p>
         </div>
         <div className='flex justify-center flex-col mb-5'>
-            <span className='mx-auto text-xl font-extrabold'>&#8377;{fee}</span>
+            <span className='mx-auto text-xl font-extrabold'>&#8377;{" "}{fee}</span>
             {/* <button className='p-2 bg-blue-400 mt-3 mx-20 md:mx-20 hover:bg-blue-700 text-white rounded-lg'>View More...</button>     */}
         </div>
         </div>

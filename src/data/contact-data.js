@@ -14,7 +14,7 @@ export const contactData = [
     title: "Online Tutions🎥",
     icon: LinkIcon,
     description:
-      "We have a series of video lectures that cover important topics in chemistry such as Structural Elucidations.",
+      "Join our online tutoring platform and receive personalized instruction from experienced teaching Expert.",
   },
 ];
 
