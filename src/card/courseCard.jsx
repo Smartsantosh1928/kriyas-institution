@@ -1,12 +1,12 @@
 import React from 'react';
 import shield from '/img/shield.svg'
 
-
 function Coursecard({name,time,batch,fee,img}) {
     return (
         <>
         <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img class="w-full" src={`/img/card.jpg`} alt="Sunset in the mountains"/>
+        {/* <img class="w-full" src={`${img}`} alt="Course"/> */}
+        {img}
         <div class="px-6 py-4 text-center">
             <div class="font-bold text-xl mb-2">{name}</div>
             <p class="text-gray-700 text-xl">

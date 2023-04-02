@@ -1,17 +1,15 @@
-import { Link } from "react-router-dom";
+import { Redirect } from 'react-dom';
+
 import {
   Card,
   CardHeader,
   CardBody,
   CardFooter,
   Input,
-  Checkbox,
   Button,
-  Typography,
-  Select,
-  Option
+  Typography
 } from "@material-tailwind/react";
-import { SimpleFooter } from "@/widgets/layout";
+import { SimpleFooter } from "./simple-footer";
 import { useState } from "react";
 
 export function SignUp() {
@@ -30,7 +28,12 @@ export function SignUp() {
     }
   }
 
-  // fetch('http://localhost:3000/register', {
+  const handlesubmit = () => {
+    if(true)
+    return <Redirect to="/upload" />;
+  }
+
+  // fetch('https://plum-sparkling-squid.cyclic.app/register', {
   //   method: 'POST',
   //   body : details
   // })
@@ -49,49 +52,20 @@ export function SignUp() {
             color="blue"
             className="mb-4 grid h-28 place-items-center"
           >
-            <Typography variant="h3" color="white">
+            <Typography variant="h3" color="white" className="text-blue-500">
               Sign Up
             </Typography>
           </CardHeader>
-          <CardBody className="flex flex-col gap-4">
-            <Input variant="standard" type="text" label="Name" size="lg" name="stud_name" onChange={handleChange}/>
-            <Input variant="standard" type="email" label="Email" size="lg" name="stud_email" onChange={handleChange}/>
-            <Input variant="standard" type="text" label="Phone" size="lg" name="stud_phone" onChange={handleChange}/>
-            <Input
-              variant="standard"
-              type="password"
-              label="Password"
-              name="stud_password"
-              size="lg"
-              onChange={handleChange}
-            />
-            <Select variant="outlined" label="Select Class" name="stud_std" value={details.stud_std} onChange={handleChange}>
-              <Option value="Class 12+">Class 12+</Option>
-              <Option value="Class 12" >Class 12</Option>
-              <Option value="Class 11">Class 11</Option>
-              <Option value="Class 10">Class 10</Option>
-            </Select>
-            <div className="-ml-2.5">
-              <Checkbox label="I agree the Terms and Conditions" checked={details.terms} name="terms" onChange={(e) => {setDetails(e.target.checked)}}/>
-            </div>
+          <CardBody className="flex flex-col gap-4 p-5">
+            UserName
+            <input type="text" name="user" id="user" placeholder="Type Your UserName Here" onChange={handleChange} className="border border-blue-500 p-2 rounded-xl" />
+            Password
+            <input type="password" name="pass" id="pass" placeholder="Type Your Paswword Here" onChange={handleChange} className="border border-blue-500 p-2 rounded-xl" />
           </CardBody>
-          <CardFooter className="pt-0">
-            <Button variant="gradient" fullWidth>
+          <CardFooter className="pt-0 text-center p-10">
+            <Button variant="gradient" className="bg-blue-500 rounded-2xl p-3 px-3" onClick={handlesubmit}>
               Register
             </Button>
-            <Typography variant="small" className="mt-6 flex justify-center">
-              Already have an account?
-              <Link to="/sign-in">
-                <Typography
-                  as="span"
-                  variant="small"
-                  color="blue"
-                  className="ml-1 font-bold"
-                >
-                  Sign in
-                </Typography>
-              </Link>
-            </Typography>
           </CardFooter>
         </Card>
       </div>

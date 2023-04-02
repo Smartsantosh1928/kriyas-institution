@@ -18,7 +18,8 @@ export function Home() {
     const year = new Date().getFullYear();
 
     const hanndleDownload = () => {
-        fetch('http://localhost:3000/downloadbrochure',
+
+        fetch('https://plum-sparkling-squid.cyclic.app/downloadbrochure',
         {
           method:"GET",
         }).then(Response => Response.blob())
@@ -28,6 +29,8 @@ export function Home() {
           link.href = url;
           link.download = "Brochure.pdf";
           link.click();
+          link.remove();
+          window.URL.revokeObjectURL(url);
         })
     }
 
@@ -71,7 +74,7 @@ export function Home() {
             'You Have Been Registered Successfully!',
             'We Will Contact You Soon...'
             )
-            fetch("http://localhost:3000/sendmail", 
+            fetch("https://plum-sparkling-squid.cyclic.app/sendmail", 
             { 
               method: 'POST',
               headers: {
@@ -118,18 +121,18 @@ export function Home() {
         <>
             <div className='w-full h-auto flex md:flex-row bg-[#f5f5f5] p-5 flex-col edu'>
                 <img src="/img/logo.png" alt="LOGO" className='w-28 h-28 md:w-40 md:h-40 mr-3'/>
-                <span className='text-4xl -mt-24 ml-32 md:ml-0 md:text-6xl md:mt-12'>Kriya's Institution</span>
-                    <a href="http://t.me/" target="_blank" className='ml-auto -mt-16 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
+                <span className='text-4xl -mt-24 ml-32 text-start md:ml-0 md:text-6xl md:mt-12'>Kriya's Institution</span>
+                    <a href="http://t.me/" target="_blank" className='ml-auto -mt-12 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
                         <img src={Telegramsvg} alt="Telegram" className='w-10 h-10 hover:bg-[#239bcd] rounded-lg' />
                         <span className='text-3xl  hidden md:block'>Telegram Channel</span>
                     </a>
-                <button className='bg-blue-400 rounded-lg text-2xl mt-12 m-2 p-2 text-white hover:bg-blue-600 md:mb-20 md:px-6 md:mr-12 md:pt-2 md:mt-16' onClick={handlePopup}>Register</button>
+                <button className='bg-blue-400 rounded-lg text-2xl mt-16 m-2 p-2 text-white hover:bg-blue-600 md:mb-20 md:px-6 md:mr-12 md:pt-2 md:mt-16' onClick={handlePopup}>Register</button>
             </div>
         <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32 md:-mt-10">
             <div className="absolute top-0 h-full w-full bg-[url('/img/teamwork.jpg')] bg-cover" />
             <div className="absolute top-0 h-full w-full bg-black/50 bg-cover bg-center" />
         </div>
-        <div className='w-full h-auto text-4xl bg-[#f5f5f5] text-green-600 p-5 grid grid-cols-1 md:grid-cols-2'>
+        <div className='w-full h-auto text-4xl bg-[#f5f5f5] text-blue-500 p-5 grid grid-cols-1 md:grid-cols-2'>
             <div className='md:mt-24 mt-0'>
                 <div className='flex flex-row items-center justify-center'>
                     <span className='text-3xl md:text-4xl'>Only for Chemistry</span>
@@ -138,7 +141,7 @@ export function Home() {
                 <span className='md:text-2xl font-bold mt-10 md:mt-3 text-sm flex justify-center items-center flex-col md:flex-row'>
                     Registrations Opens for the Year {" "} {year} - {year + 1}✨
                 </span>
-                <Button onClick={hanndleDownload} variant="gradient" className="rounded-2xl mt-10 md:ml-48 bg-blue-500 ">
+                <Button onClick={hanndleDownload} variant="gradient" className="rounded-2xl mt-10 ml-16 md:ml-48 bg-blue-500 ">
                 <span className='text-lg md:text-2xl flex mt-2'>
                     Download Brochure
                     <img src={brochuresvg} alt="Brochure" className='pl-3 -mr-10 -mb-5' />
