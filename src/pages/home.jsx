@@ -122,7 +122,7 @@ export function Home() {
             <div className='w-full h-auto flex md:flex-row bg-[#f5f5f5] p-5 flex-col edu'>
                 <img src="/img/logo.png" alt="LOGO" className='w-28 h-28 md:w-40 md:h-40 mr-3'/>
                 <span className='text-4xl -mt-24 ml-32 text-start md:ml-0 md:text-6xl md:mt-12'>Kriya's Institution</span>
-                    <a href="http://t.me/+0UkpIEEdQX4zZTQ1" target="_blank" className='ml-auto -mr-5 -mt-12 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
+                    <a href="https://t.me/+0UkplEEdQX4zZTQ1" target="_blank" className='ml-auto -mr-5 -mt-12 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
                         <img src={Telegramsvg} alt="Telegram" className='w-10 h-10 hover:bg-[#239bcd] rounded-lg' />
                         <span className='text-3xl  hidden md:block'>Telegram Channel</span>
                     </a>
@@ -211,9 +211,9 @@ export function Home() {
               <option value="Class 12 (Eng)">Class 12  ( Medium:Eng )</option>
               <option value="NEET">NEET</option>
             </select>
-            <div className="-ml-2.5 flex">
+            {/* <div className="-ml-2.5 flex">
               <checkbox label="I agree the Terms and Conditions" checked={details.terms} name="terms" onChange={(e) => {setDetails(e.target.checked)}}/>
-            </div>
+            </div> */}
           </CardBody>
           <CardFooter className="pt-0">
             {

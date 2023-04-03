@@ -1,15 +1,23 @@
 import Swal from 'sweetalert2';
 import { useEffect, useState } from "react";
+import { useLocation,useNavigate } from "react-router-dom";
 import ReactLoading from 'react-loading';
 
 const Upload = () => {
 
-  useEffect(() => {
+  const navigate=useNavigate()
+  const location=useLocation()
+
+  useEffect(()=>{
+    if(location.state?.from!=="signup"){
+      navigate("/signup")
+    }else{
     Swal.fire({
-      position: 'top-end',
-      icon: 'info',
-      title: 'Your PDF must be named as brochure.pdf',
-    })}, [])
+          position: 'top-end',
+          icon: 'info',
+          title: 'Your PDF must be named as brochure.pdf',
+        })}
+  },[])
 
   const [isloading, setIsLoading] = useState(false);
 

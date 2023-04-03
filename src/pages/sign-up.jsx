@@ -11,7 +11,6 @@ import {
 import { SimpleFooter } from "./simple-footer";
 import { useState } from "react";
 import Swal from 'sweetalert2';
-import Upload from "./upload";
 
 export function SignUp() {
 
@@ -33,7 +32,7 @@ export function SignUp() {
 
   const handlelogin = () => {
     if(details.user == "admin" && details.pass == "maheswari@123")
-    navigate('/upload')
+    navigate('/upload',{state:{from:"signup"}})
     else
     new Swal('Invalid Credentials', 'Please Enter Valid Credentials', 'error')
   }
