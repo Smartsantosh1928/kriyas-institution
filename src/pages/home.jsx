@@ -72,7 +72,7 @@ export function Home() {
           Swal.fire(
             'Good job!',
             'You Have Been Registered Successfully!',
-            'We Will Contact You Soon...'
+            'Mentor Will Contact You Soon...'
             )
             fetch("https://plum-sparkling-squid.cyclic.app/sendmail", 
             { 
@@ -85,6 +85,8 @@ export function Home() {
             setisloading(false)
             setDetails({});
             document.querySelectorAll("input").forEach(input => input.value = "");
+            document.querySelectorAll("select").value = "";
+
           })
           .catch(error => console.error('Error!', error.message))
         }
@@ -107,6 +109,8 @@ export function Home() {
     {
       window.scrollTo(0,0);
       document.body.style.overflow = 'hidden';
+      if(window.scrollY!==0)
+      window.scrollTo(0,0)
     }
 
 
@@ -139,10 +143,10 @@ export function Home() {
                     <img src={Hourglass} alt="Chemistry" className='md:ml-1 mt-5 w-16 h-16'/>
                 </div>
                 <span className='md:text-2xl font-bold mt-10 md:mt-3 text-sm flex justify-center items-center flex-col md:flex-row'>
-                    Registrations Opens for the Year {" "} {year} - {year + 1}✨
+                    Registration Opens for the Year {" "} {year} - {year + 1}✨
                 </span>
-                <Button onClick={hanndleDownload} variant="gradient" className="rounded-2xl mt-10 ml-16 md:ml-48 bg-blue-500 ">
-                <span className='text-lg md:text-2xl flex mt-2'>
+                <Button onClick={hanndleDownload} className="rounded-2xl mt-10 ml-10 md:ml-40 bg-blue-500 ">
+                <span className='text-base md:text-2xl flex mt-2 -mb-1'>
                     Download Brochure
                     <img src={brochuresvg} alt="Brochure" className='pl-3 -mr-10 -mb-5' />
                 </span>
@@ -153,7 +157,7 @@ export function Home() {
             </div>
         </div>
         <div className='flex justify-center items-center text-center p-1'>
-        <span className='text-xl text-green-600 font-bold '>
+        <span className='text-xl text-blue-700 font-bold '>
           Contact for more Info : {" "}
            <a href="tel:9486552761" className='hover:text-blue-300'>+91 9486552761</a>{" & "}
            <a href="mailto:maheswarivaseekaran@gmail.com" className='hover:text-blue-300'>maheswarivaseekaran@gmail.com</a>
@@ -205,11 +209,11 @@ export function Home() {
               <option value="" disabled selected>Select Standard</option>
               <option value="Class 11 (CBSE)">Class 11 ( CBSE )</option>
               <option value="Class 12 (CBSE)">Class 12 ( CBSE )</option>
-              <option value="Class 11 (Tam)">Class 11 ( Medium:Tam )</option>
-              <option value="Class 12 (Tam)">Class 12  ( Medium:Tam )</option>
-              <option value="Class 11 (Eng)">Class 11 ( Medium:Eng )</option>
-              <option value="Class 12 (Eng)">Class 12  ( Medium:Eng )</option>
-              <option value="NEET">NEET</option>
+              <option value="TNBSC Class 11 (Tam)">TNBSC Class 11 ( Medium:Tam )</option>
+              <option value="TNBSC Class 12 (Tam)">TNBSC Class 12  ( Medium:Tam )</option>
+              <option value="TNBSC Class 11 (Eng)">TNBSC Class 11 ( Medium:Eng )</option>
+              <option value="TNBSC Class 12 (Eng)">TNBSC Class 12  ( Medium:Eng )</option>
+              <option value="NEET/JEE">NEET/JEE</option>
             </select>
             {/* <div className="-ml-2.5 flex">
               <checkbox label="I agree the Terms and Conditions" checked={details.terms} name="terms" onChange={(e) => {setDetails(e.target.checked)}}/>
@@ -246,7 +250,7 @@ export function Home() {
             }
       </div>
       </section>
-      <div className='w-full h-full grid grid-cols-1 md:grid-cols-3 p-10 -mt-16 mb-24 md:gap-60 gap-10'>
+      <div className='w-full h-full grid grid-cols-1 md:grid-cols-3 p-10 -mt-16 mb-24 md:gap-40 gap-10'>
       {
         tndata.map(({name,time,batch,fee,img}) => {
           return(
@@ -329,7 +333,7 @@ export function Home() {
                 <div className="mb-16 flex items-center justify-center gap-2">
                   <BriefcaseIcon className="-mt-px h-4 w-4 text-blue-gray-700" />
                   <Typography className="font-bold text-xl text-blue-gray-700">
-                   Founder Of Kriya's Academy
+                   Founder Of Kriya's Institution
                   </Typography>
                 </div>
               </div>

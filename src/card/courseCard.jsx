@@ -10,7 +10,11 @@ function Coursecard({name,time,batch,fee,img}) {
         <div class="px-6 py-4 text-center">
             <div class="font-bold text-xl mb-2">{name}</div>
             <p class="text-gray-700 text-xl">
-            Online class Timings : {time}
+                {
+                    name == 'NEET/JEE' ?
+                    `Online class Timings : ${time}`
+                    : `Online class Timing : ${time}`
+                }
             </p>
             <p class="text-gray-700 text-xl flex justify-center mt-5">
             <img src={shield} alt="session" className='w-7 h-7 mr-2'/>
