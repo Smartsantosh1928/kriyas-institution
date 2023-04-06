@@ -24,7 +24,7 @@ export const coursedata = [
         img: <img class="w-full" src={glass} alt="Course"/>
     },
     {
-        name: "TNBSC Class 11 ( Medium : Eng )",
+        name: "TNBSE Class 11 ( Medium : Eng )",
         time: "Friday 7:00 PM - 9:00 PM",
         batch: "E2",
         fee: "10,000/-",
@@ -35,21 +35,21 @@ export const coursedata = [
 
 export const tndata = [
     {
-        name: "TNBSC Class 12 ( Medium : Eng )",
+        name: "TNBSE Class 12 ( Medium : Eng )",
         time: "Sunday 2:00 PM - 4:00 PM",
         batch: "E1",
         fee: "10,000/-",
         img: <img class="w-full" src={glass} alt="Course"/>
     },
     {
-        name: "TNBSC Class 11 ( Medium : Tam )",
+        name: "TNBSE Class 11 ( Medium : Tam )",
         time: "Thursday 7:00 PM - 9:00 PM",
         batch: "T2",
         fee: "10,000/-",
         img: <img class="w-full" src={trainingsvg} alt="Course"/>
     },
     {
-        name: "TNBSC Class 12 ( Medium : Tam )",
+        name: "TNBSE Class 12 ( Medium : Tam )",
         time: "Teusday 7:00 PM - 9:00 PM",
         batch: "T1",
         fee: "10,000/-",

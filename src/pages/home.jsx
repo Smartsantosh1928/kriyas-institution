@@ -145,8 +145,8 @@ export function Home() {
                 <span className='md:text-2xl font-bold mt-10 md:mt-3 text-sm flex justify-center items-center flex-col md:flex-row'>
                     Registration Opens for the Year {" "} {year} - {year + 1}✨
                 </span>
-                <Button onClick={hanndleDownload} className="rounded-2xl mt-10 ml-10 md:ml-40 bg-blue-500 ">
-                <span className='text-base md:text-2xl flex mt-2 -mb-1'>
+                <Button onClick={hanndleDownload} className="rounded-2xl mt-10 ml-10 md:ml-40 bg-blue-500 px-10">
+                <span className='text-base md:text-2xl flex mt-2'>
                     Download Brochure
                     <img src={brochuresvg} alt="Brochure" className='pl-3 -mr-10 -mb-5' />
                 </span>
@@ -209,10 +209,10 @@ export function Home() {
               <option value="" disabled selected>Select Standard</option>
               <option value="Class 11 (CBSE)">Class 11 ( CBSE )</option>
               <option value="Class 12 (CBSE)">Class 12 ( CBSE )</option>
-              <option value="TNBSC Class 11 (Tam)">TNBSC Class 11 ( Medium:Tam )</option>
-              <option value="TNBSC Class 12 (Tam)">TNBSC Class 12  ( Medium:Tam )</option>
-              <option value="TNBSC Class 11 (Eng)">TNBSC Class 11 ( Medium:Eng )</option>
-              <option value="TNBSC Class 12 (Eng)">TNBSC Class 12  ( Medium:Eng )</option>
+              <option value="TNBSE Class 11 (Tam)">TNBSE Class 11 ( Medium:Tam )</option>
+              <option value="TNBSE Class 12 (Tam)">TNBSE Class 12  ( Medium:Tam )</option>
+              <option value="TNBSE Class 11 (Eng)">TNBSE Class 11 ( Medium:Eng )</option>
+              <option value="TNBSE Class 12 (Eng)">TNBSE Class 12  ( Medium:Eng )</option>
               <option value="NEET/JEE">NEET/JEE</option>
             </select>
             {/* <div className="-ml-2.5 flex">
