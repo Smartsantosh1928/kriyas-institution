@@ -4,11 +4,9 @@
 @tailwind utilities;
 
 body{
-    overflow: hidden;
     font-family: 'Mulish', sans-serif;
     background-color: #f5f5f5;
 }
-
 .edu {
     font-family: 'Edu NSW ACT Foundation', sans-serif;
 }

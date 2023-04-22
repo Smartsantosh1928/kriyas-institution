@@ -31,7 +31,7 @@ const handleFileUpload = (event) => {
       const formData = new FormData();
       formData.append('file', file);
       setIsLoading(true)
-      fetch('https://plum-sparkling-squid.cyclic.app/upload', {
+      fetch('http://localhost:3000/upload', {
         method: 'POST',
         body: formData,
       }).then(async response => 

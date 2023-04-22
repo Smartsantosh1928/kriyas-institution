@@ -12,14 +12,14 @@ import { useState } from 'react';
 import Coursecard from '../card/courseCard';
 import { coursedata, tndata } from '../data/course-data';
 import Swal from 'sweetalert2';
-import ReactLoading from 'react-loading';
+import Register from './register'
 
 export function Home() {
     const year = new Date().getFullYear();
 
     const hanndleDownload = () => {
 
-        fetch('https://plum-sparkling-squid.cyclic.app/downloadbrochure',
+        fetch('http://localhost:3000/downloadbrochure',
         {
           method:"GET",
         }).then(Response => Response.blob())
@@ -52,10 +52,13 @@ export function Home() {
     const scriptURL = "https://script.google.com/macros/s/AKfycbxqePwBS9AriYdbi69jTBdiftstxuPW5cgkoLfG6IZ_w3iidjSHZoqUtaBrXFFoOrs_/exec"
 
     const handlesubmit = async () => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if(details.stud_name == "" || details.stud_name == undefined)
       Swal.fire({icon:"warning",title:"Please Enter Your Name"})
       else if(details.stud_email == "" || details.stud_email == undefined)
       Swal.fire({icon:"warning",title:"Please Enter Your Email"})
+      else if(!emailRegex.test(details.stud_email))
+      Swal.fire({icon:"warning",title:"Invalid Email format"})
       else if(details.stud_phone == "" || details.stud_phone == undefined)
       Swal.fire({icon:"warning",title:"Please Enter Your Mobile Number"})
       else if(details.stud_std == "" || details.stud_std == undefined)
@@ -74,7 +77,7 @@ export function Home() {
             'You Have Been Registered Successfully!',
             'Mentor Will Contact You Soon...'
             )
-            fetch("https://plum-sparkling-squid.cyclic.app/sendmail", 
+            fetch("http://localhost:3000/sendmail", 
             { 
               method: 'POST',
               headers: {
@@ -85,14 +88,13 @@ export function Home() {
             setisloading(false)
             setDetails({});
             document.querySelectorAll("input").forEach(input => input.value = "");
-            document.querySelectorAll("select").value = "";
-
+            setpopup(false)
           })
           .catch(error => console.error('Error!', error.message))
         }
     }
 
-    const [popup,setpopup] = useState(true)
+    const [popup,setpopup] = useState(false)
     const handlePopup = () => {
       setpopup(!popup)
     }
@@ -102,17 +104,6 @@ export function Home() {
         setpopup(!popup)
       }, 5000);
     },[])
-
-    if (popup) 
-      document.body.style.overflow = 'auto';
-    else
-    {
-      window.scrollTo(0,0);
-      document.body.style.overflow = 'hidden';
-      if(window.scrollY!==0)
-      window.scrollTo(0,0)
-    }
-
 
     const handlescroll = ()=>{
       window.scroll({
@@ -126,6 +117,7 @@ export function Home() {
             <div className='w-full h-auto flex md:flex-row bg-[#f5f5f5] p-5 flex-col edu'>
                 <img src="/img/logo.png" alt="LOGO" className='w-28 h-28 md:w-40 md:h-40 mr-3'/>
                 <span className='text-4xl -mt-24 ml-32 text-start md:ml-0 md:text-6xl md:mt-12'>Kriya's Institution</span>
+                <span className='text-4xl -mt-24 ml-32 text-start md:ml-0 md:text-6xl md:mt-12 hidden'>Kriyas Institution</span>
                     <a href="https://t.me/+0UkplEEdQX4zZTQ1" target="_blank" className='ml-auto -mr-5 -mt-12 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
                         <img src={Telegramsvg} alt="Telegram" className='w-10 h-10 hover:bg-[#239bcd] rounded-lg' />
                         <span className='text-3xl  hidden md:block'>Telegram Channel</span>
@@ -136,6 +128,7 @@ export function Home() {
             <div className="absolute top-0 h-full w-full bg-[url('/img/teamwork.jpg')] bg-cover" />
             <div className="absolute top-0 h-full w-full bg-black/50 bg-cover bg-center" />
         </div>
+        { popup&&<Register popup={popup} handlePopup={handlePopup} handleChange={handleChange} details={details} handlesubmit={handlesubmit} isloading={isloading} setisloading={setisloading}/>}
         <div className='w-full h-auto text-4xl bg-[#f5f5f5] text-blue-500 p-5 grid grid-cols-1 md:grid-cols-2'>
             <div className='md:mt-24 mt-0'>
                 <div className='flex flex-row items-center justify-center'>
@@ -185,7 +178,7 @@ export function Home() {
               </Card>
             ))}
           </div>
-      <div className={`container mx-auto p-4 ${popup ? 'hidden' : 'block'}`}>
+      {/* <div className={`container mx-auto p-4 ${popup ? 'hidden' : 'block'}`}>
         <Card className="absolute top-2/4 left-2/4 w-full max-w-[24rem] -translate-y-2/4 -translate-x-2/4">
           <CardHeader
             variant="gradient"
@@ -215,9 +208,9 @@ export function Home() {
               <option value="TNBSE Class 12 (Eng)">TNBSE Class 12  ( Medium:Eng )</option>
               <option value="NEET/JEE">NEET/JEE</option>
             </select>
-            {/* <div className="-ml-2.5 flex">
+             <div className="-ml-2.5 flex">
               <checkbox label="I agree the Terms and Conditions" checked={details.terms} name="terms" onChange={(e) => {setDetails(e.target.checked)}}/>
-            </div> */}
+            </div> 
           </CardBody>
           <CardFooter className="pt-0">
             {
@@ -232,7 +225,7 @@ export function Home() {
             
          </CardFooter>
         </Card>
-      </div>
+      </div> */}
       <section data-section="course">
       <div className='w-full h-full grid grid-cols-1 md:grid-cols-4 p-10 -mt-16 mb-24 gap-10'>
           {
