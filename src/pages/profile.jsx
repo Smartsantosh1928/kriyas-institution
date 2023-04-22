@@ -95,7 +95,7 @@ export function Profile() {
                   {/* <MapPinIcon className="-mt-px h-4 w-4 text-blue-gray-700" /> */}
                   <BriefcaseIcon className="-mt-px h-4 w-4 text-blue-gray-700" />
                   <Typography className="font-medium text-blue-gray-700">
-                   Founder Of Kriya's Academy
+                   Founder Of Kriyas Academy
                   </Typography>
                 </div>
               </div>

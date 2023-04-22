@@ -56,7 +56,7 @@ export function Footer({ title, description,  socials, menus, copyright }) {
 }
 
 Footer.defaultProps = {
-  title: "Kriya's Institution",
+  title: "Kriyas Institution",
   description:
     "Sign Of Excellence and Success.",
   socials: [
@@ -85,7 +85,7 @@ Footer.defaultProps = {
     <>
       Copyright © {year} {" "}
       <span className="edu">
-        Kriya's Institution{" "} 
+        Kriyas Institution{" "} 
       </span> 
     </>
   ),
