@@ -13,6 +13,7 @@ import Coursecard from '../card/courseCard';
 import { coursedata, tndata } from '../data/course-data';
 import Swal from 'sweetalert2';
 import Register from './register'
+import RunningText from './runner';
 
 export function Home() {
     const year = new Date().getFullYear();
@@ -114,6 +115,7 @@ export function Home() {
 
     return ( 
         <>
+            <RunningText text="Admissions open for Tution of all Classes👨‍🎓 Limited seats Available. Register Now✨ Any Queries contact 📞9486552761" />
             <div className='w-full h-auto flex md:flex-row bg-[#f5f5f5] p-5 flex-col edu'>
                 <img src="/img/logo.png" alt="LOGO" className='w-28 h-28 md:w-40 md:h-40 mr-3'/>
                 <span className='text-4xl -mt-24 ml-32 text-start md:ml-0 md:text-6xl md:mt-12'>Kriyas Institution</span>
