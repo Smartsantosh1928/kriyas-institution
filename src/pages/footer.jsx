@@ -10,7 +10,7 @@ const year = new Date().getFullYear();
 
 export function Footer({ title, description,  socials, menus, copyright }) {
   return (
-    <footer className="relative px-4 -mt-20 pb-6">
+    <footer className="pb-6">
       <div className="container mx-auto">
         <div className="flex flex-wrap pt-6 text-center md:justify-center">
           <div className="w-full px-4 lg:w-6/12">
@@ -21,17 +21,18 @@ export function Footer({ title, description,  socials, menus, copyright }) {
               {description}
             </Typography>
             <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-center">
-              {socials.map(({ color, name,  path }) => (
+              {socials.map(({ color, name,  path }, index) => (
                 <a
+                  key={index}
                   href={path}
                   target="_blank"
                 >
                   <IconButton color="white" className="rounded-full flex justify-center items-center">
                     <Typography color={color}>
-                    {name == "youtubesvg" ? (<img src={youtubesvg} alt="video" className='w-6 h-6'/>)
-                    : name === "callsvg" ? (<img src={callsvg} alt="video" className='w-7 h-7'/>)
-                    : name === "whatsappsvg" ? (<img src={whatsappsvg} alt="video" className='w-7 h-7'/>)
-                    : name === "emailsvg" ? (<img src={emailsvg} alt="video" className='w-7 h-7'/>) : null}
+                    {name == "youtubesvg" ? (<img src={youtubesvg} alt="YT" className='h-fit w-fit'/>)
+                    : name === "callsvg" ? (<img src={callsvg} alt="Call" className='h-8 w-8'/>)
+                    : name === "whatsappsvg" ? (<img src={whatsappsvg} alt="WhatsApp" className='h-fit w-fit'/>)
+                    : name === "emailsvg" ? (<img src={emailsvg} alt="Email" className='h-8 w-8'/>) : null}
                     </Typography>
                   </IconButton>
                 </a>
@@ -44,7 +45,7 @@ export function Footer({ title, description,  socials, menus, copyright }) {
           <div className="mx-auto w-full px-4 text-center">
             <Typography
               variant="small"
-              className="font-normal text-blue-gray-500 text-lg"
+              className="font-extralight text-blue-gray-500 text-lg"
             >
               {copyright}
             </Typography>
@@ -56,7 +57,7 @@ export function Footer({ title, description,  socials, menus, copyright }) {
 }
 
 Footer.defaultProps = {
-  title: "Kriyas Institution",
+  title: "Kriya's Institution",
   description:
     "Sign Of Excellence and Success.",
   socials: [
@@ -85,7 +86,7 @@ Footer.defaultProps = {
     <>
       Copyright © {year} {" "}
       <span className="edu">
-        Kriyas Institution{" "} 
+        Kriya's Institution{" "} 
       </span> 
     </>
   ),
