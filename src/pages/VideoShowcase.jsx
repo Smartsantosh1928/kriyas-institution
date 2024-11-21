@@ -4,16 +4,16 @@ import { Play, PlayCircle } from 'lucide-react';
 export const VideoShowcase = () => {
   const videos = [
     {
-      id: "5u2vNqEXV8Y",
-      title: "Structural Elucidation of adrenaline",
-      description: "Decoding the Molecular Framework of Adrenaline",
-      duration: "03:56"
+      id: "bgW7C_XK9OA",
+      title: "Kriya's Institution Chemistry",
+      description: "#educational#JAM#JAM EXAM#JAM",
+      duration: "00:55"
     },
     {
-      id: "QsWPDIyQW2Q",
-      title: "NEET/JEE #chemistry",
-      description: "Step-by-step guide to solving complex Advanced problems",
-      duration: "11:34"
+      id: "KSQNxOHxPJQ",
+      title: "JAM CHEMISTRY SOLVED QUESTIONS OF 2022",
+      description: "NEET/JEE #chemistry",
+      duration: "13:46"
     }
   ];
 

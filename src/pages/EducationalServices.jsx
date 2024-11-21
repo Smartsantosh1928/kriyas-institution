@@ -106,19 +106,14 @@ export const EducationalServices = () => {
 
                   <div className="space-y-3 mb-8 flex-grow">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center">
-                        <CheckCircle2 className={`w-5 h-5 ${colors.text} mr-2`} />
+                      <div key={idx} className="flex items-start">
+                        <div className={`w-5 h-5 ${colors.text} flex-shrink-0 mr-2 mt-1`}>
+                          <CheckCircle2 className="w-full h-full" />
+                        </div>
                         <span className="text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
-
-                  {/* <button 
-                    className={`mt-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white ${colors.border} ${colors.text} font-semibold text-sm transition-colors duration-200 hover:bg-gray-50 w-full`}
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </button> */}
                 </div>
               </div>
             );

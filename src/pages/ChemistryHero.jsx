@@ -28,11 +28,11 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
           <img src="/img/logo.png" alt="LOGO" className='w-28 h-28 md:w-40 md:h-40 mr-3'/>
           <span className='text-4xl -mt-24 ml-32 text-start md:ml-0 md:text-6xl md:mt-12'>{companyName}</span>
           <span className='text-4xl -mt-24 ml-32 text-start md:ml-0 md:text-6xl md:mt-12 hidden'>{companyName}</span>
-              <a href="https://t.me/+0UkplEEdQX4zZTQ1" target="_blank" className='z-50 ml-auto -mr-5 -mt-12 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
+              <a href="https://t.me/+0UkplEEdQX4zZTQ1" target="_blank" className='z-10 ml-auto -mr-5 -mt-12 md:mt-0 flex flex-row border border-none p-2 rounded-3xl md:mb-32 md:-mr-44'>
                   <img src={Telegramsvg} alt="Telegram" className='w-10 h-10 rounded-lg' />
                   <span className='text-3xl  hidden md:block'>Telegram Channel</span>
               </a>
-          <button className='z-50 bg-blue-400 cursor-pointer rounded-lg text-2xl mt-16 m-2 p-2 text-white hover:bg-blue-600 md:mb-20 md:px-6 md:mr-12 md:pt-2 md:mt-16' onClick={handlePopup} >Register</button>
+          <button className='z-10 bg-blue-400 cursor-pointer rounded-lg text-2xl mt-16 m-2 p-2 text-white hover:bg-blue-600 md:mb-20 md:px-6 md:mr-12 md:pt-2 md:mt-16' onClick={handlePopup} >Register</button>
       </div>
       
       <div className="absolute inset-0 overflow-hidden">
@@ -42,7 +42,7 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center p-5">
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center justify-center p-2 bg-blue-100 rounded-full mb-8">
@@ -97,7 +97,7 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
             <div className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className="text-sm font-medium text-gray-600">Live Classes Available</span>
+                <span className="text-sm lg:font-medium text-gray-600">Live Classes Available (Both Online & Offline)</span>
               </div>
             </div>
             

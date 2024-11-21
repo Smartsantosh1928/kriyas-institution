@@ -4,9 +4,15 @@ import ReactLoading from 'react-loading';
 import registrationData from "../data/registration-data"
 
 const Register =({popup,handlePopup,handleChange,details,handlesubmit,isloading})=>{
+    
+  const handleClickOutside = (event) => {
+    if (event.target.classList.contains("modal-backdrop")) {
+      handlePopup();
+    }
+  }
 
-return <div className="fixed inset-0  bg-black bg-opacity-50 z-50  w-full h-full">
-       <div className="container z-10 mx-auto" >
+return <div className="fixed inset-0  bg-black bg-opacity-50 z-50  w-full h-full modal-backdrop" onMouseDown={handleClickOutside}>
+       <div className="container z-20 mx-auto" >
         <Card className="absolute top-2/4 left-2/4 w-full max-w-[24rem] -translate-y-2/4 -translate-x-2/4">
           <CardHeader
             variant="gradient"
@@ -25,7 +31,7 @@ return <div className="fixed inset-0  bg-black bg-opacity-50 z-50  w-full h-full
             <input type="email" label="Email" size="lg" name="stud_email" onChange={handleChange} placeholder="Type your Email here" className='outline rounded-md p-2 outline-blue-300'/>
             <span>WhatsApp Number</span>
             <input type="text" label="Phone" size="lg" name="stud_phone" onChange={handleChange} placeholder="Type your Mobile Number here" className='outline rounded-md p-2 outline-blue-300'/>
-              <span>Select Standard</span>
+              <span>Select Course/ Tution/ Assistance</span>
             <select label="Select Class" name="stud_std" value={details.stud_std} onChange={handleChange} className='outline rounded-md p-2 outline-blue-300'>
               <option value="" disabled defaultValue={""}>Select Standard</option>
               {registrationData.map((course, index) => {

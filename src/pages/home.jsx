@@ -18,22 +18,20 @@ export function Home() {
     const year = new Date().getFullYear();
     const companyName = "Kriya's Institution"
 
-    const [details, setDetails] = useState({})
+    const [details, setDetails] = useState({stud_name: "", stud_email: "", stud_phone: "", stud_std: ""})
     const handleChange = (e) => {
-        if(typeof(e) == 'string' &&e.includes("Class"))
-        {
-        setDetails({ ...details, "stud_std": e })
-        console.log(details);
+        if(typeof(e) == 'string' &&e.includes("Class")) {
+          setDetails({ ...details, "stud_std": e })
+          console.log(details);
+        } else{
+          const { name, value } = e.target
+          setDetails({ ...details, [name]: value })
+          console.log(details);
         }
-        else{
-        const { name, value } = e.target
-        setDetails({ ...details, [name]: value })
-        console.log(details);
     }
-  }
 
     const [isloading,setisloading] = useState(false)
-    const scriptURL = "https://script.google.com/macros/s/AKfycbxqePwBS9AriYdbi69jTBdiftstxuPW5cgkoLfG6IZ_w3iidjSHZoqUtaBrXFFoOrs_/exec"
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwfLqFU9ss83Ok-dyoXq8OowGFTn8pN6HCxd5eq8yEThK67leOt67LgWipHGDxX-LjWnw/exec"
 
     const handlesubmit = async () => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -70,7 +68,7 @@ export function Home() {
               body:JSON.stringify(details),
             })
             setisloading(false)
-            setDetails({});
+            setDetails({stud_name: "", stud_email: "", stud_phone: "", stud_std: ""});
             document.querySelectorAll("input").forEach(input => input.value = "");
             setpopup(false)
           })
@@ -79,8 +77,28 @@ export function Home() {
     }
 
     const [popup,setpopup] = useState(false)
+
     const handlePopup = () => {
-      setpopup(!popup)
+      console.log(`HandlePopup ${details.stud_email} ${details.stud_name} ${details.stud_phone} ${details.stud_std}`)
+      if (popup && (details.stud_name != "" || details.stud_email != "" || details.stud_phone != "" || details.stud_std != "")) {
+        Swal.fire({
+          title: "Details can be discarded!",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          cancelButtonColor: "#3085d6",
+          confirmButtonText: "Yes, Discard!"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            setpopup(!popup)
+            setDetails({stud_name: "", stud_email: "", stud_phone: "", stud_std: ""})
+          }
+        });
+      } else {
+        setpopup(!popup)
+        setDetails({stud_name: "", stud_email: "", stud_phone: "", stud_std: ""})
+      }
     }
 
     useEffect(() => {
@@ -98,7 +116,7 @@ export function Home() {
 
     return ( 
       <>
-        <RunningText text="Admissions open for Online Classes and Research Guidance 👨‍🎓 Limited seats Available. Register Now ✨ Any Queries contact 📞 9486552761" />
+        <RunningText text="Admissions open for Online Classes for JAM and TRB Chemistry 👨‍🎓 Limited seats Available. Register Now ✨ Any Queries contact 📞 9486552761" />
         {popup && <Register popup={popup} handlePopup={handlePopup} handleChange={handleChange} details={details} handlesubmit={handlesubmit} isloading={isloading} setisloading={setisloading}/>}
 
         <ChemistryHero companyName={companyName} handlePopup={handlePopup} />
@@ -171,7 +189,7 @@ export function Home() {
                   <div className="mb-16 flex items-center justify-center gap-2">
                     <BriefcaseIcon className="-mt-px h-4 w-4 text-blue-gray-700" />
                     <Typography className="font-medium text-xl text-blue-gray-700">
-                    Founder and CEO Of {companyName}
+                    Founder and CEO of {companyName}
                     </Typography>
                   </div>
                 </div>

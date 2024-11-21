@@ -64,7 +64,7 @@ Footer.defaultProps = {
     {
       color: "red",
       name: "youtubesvg",
-      path: "https://www.youtube.com/@mahe.chemist402",
+      path: "https://www.youtube.com/@Mahe.Chemist",
     },
     {
       color: "green",

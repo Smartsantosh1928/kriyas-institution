@@ -4,24 +4,17 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "Computer Science Graduate '23",
-    content: "The faculty's dedication and cutting-edge curriculum prepared me exceptionally well for my role at a leading tech company. The hands-on experience was invaluable.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+    name: "Dr. Priya Sharma",
+    role: "Ph.D. in Organic Chemistry '23",
+    content: "The rigorous research opportunities and state-of-the-art laboratories at this institution provided the perfect environment for my academic and professional growth. The guidance from world-class faculty was instrumental in my successful transition to a leading pharmaceutical company.",
+    image: "/img/female-unknown.jpg"
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "MBA Alumni '22",
-    content: "The diverse perspectives and global network I gained here have been instrumental in my career growth. The mentorship program exceeded all my expectations.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
-  },
-  {
-    id: 3,
-    name: "Emily Rodriguez",
-    role: "Engineering Student",
-    content: "The collaborative environment and state-of-the-art facilities have given me the perfect platform to pursue my research interests. It's been transformative.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+    name: "Karthick",
+    role: "M.Sc. in Analytical Chemistry '22",
+    content: "The hands-on training with advanced instruments and exposure to real-world chemical challenges prepared me to excel in the industry. The collaborative learning atmosphere and exceptional mentorship made my experience truly enriching.",
+    image: "/img/male-unknown.jpg"
   }
 ];
 
@@ -56,9 +49,9 @@ export function TestimonialsCarousel() {
   }, [currentIndex]);
 
   return (
-    <div className="relative py-16 px-4 sm:px-6 lg:px-8 p-5">
+    <div className="relative py-16 sm:px-6 lg:px-8 px-10 bg-blue-50">
       <div className="absolute inset-0">
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-blue-50 to-transparent" />
+        <div className="absolute inset-y-0 left-0 w-1/2" />
       </div>
       
       <div className="relative max-w-7xl mx-auto">
@@ -130,7 +123,7 @@ export function TestimonialsCarousel() {
                 <ChevronRight className="h-6 w-6 text-gray-600" />
               </button>
 
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-2 mt-8">
+              <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-2 mt-8">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}

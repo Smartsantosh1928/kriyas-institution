@@ -106,7 +106,7 @@ export function Profile() {
                     <Typography variant="h6" className="mb-8 font-normal text-blue-gray-500 text-lg">
                     Mentor is always there to listen to your concerns, provide guidance, and offer encouragement. They take a personal interest in your growth and development, and help you overcome obstacles in your path.
                     </Typography>
-                      <a href="http://linkedin.com/in/maheswari-j-vaseekaran-46450545" target="_blank">
+                      <a href="https://linkedin.com/in/maheswari-j-vaseekaran-46450545" target="_blank">
                         <Button className="flex">
                           <BsLinkedin className="text-base mr-2 mt-1"/>
                           <span className="text-base">
