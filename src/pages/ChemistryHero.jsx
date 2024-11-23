@@ -4,21 +4,16 @@ import Telegramsvg from '/img/logotype.svg'
 
 export const ChemistryHero = ({ companyName, handlePopup }) => {
 
-  const hanndleDownload = () => {
+  const hanndleDownload = async () => {
 
-    fetch('http://localhost:3000/downloadbrochure',
-    {
-      method:"GET",
-    }).then(Response => Response.blob())
-    .then(blob => {
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = "Brochure.pdf";
-      link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url);
-    })
+    const response = await fetch("/img/Brochure.jpeg");
+    const blob = await response.blob();
+
+    // Create a link to trigger download
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = "Brochure.jpeg";
+    link.click();
 }
 
   return (
@@ -88,7 +83,7 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 rounded-3xl transform rotate-3"></div>
             <img
-              src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80"
+              src="/img/hero-img.avif"
               alt="Chemistry Education"
               className="relative rounded-3xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500"
             />

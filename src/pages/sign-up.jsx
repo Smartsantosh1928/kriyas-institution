@@ -1,14 +1,12 @@
-import { useNavigate,Routes,Route } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Card,
   CardHeader,
   CardBody,
   CardFooter,
-  Input,
   Button,
   Typography
 } from "@material-tailwind/react";
-import { SimpleFooter } from "./simple-footer";
 import { useState } from "react";
 import Swal from 'sweetalert2';
 
@@ -72,12 +70,6 @@ export function SignUp() {
             </Button>
           </CardFooter>
         </Card>
-      </div>
-      {/* <Routes>
-        <Route path="/upload" element={<Upload/>} />
-      </Routes> */}
-      <div className="container absolute bottom-6 left-2/4 z-10 mx-auto -translate-x-2/4 text-white">
-        <SimpleFooter />
       </div>
     </>
   );

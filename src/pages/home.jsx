@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import recordsvg from '/img/record.svg'
-import { Typography, Button, Avatar, Dialog, DialogHeader, DialogBody, DialogFooter } from "@material-tailwind/react";
+import { Typography, Button, Avatar } from "@material-tailwind/react";
 import { Footer } from "./footer";
 import { BriefcaseIcon } from "@heroicons/react/24/solid";
 import { useState } from 'react';
@@ -59,13 +59,17 @@ export function Home() {
             'You Have Been Registered Successfully!',
             'Mentor Will Contact You Soon...'
             )
-            fetch("http://localhost:3000/sendmail", 
+            fetch("https://kriyasinstitution.in/mail.php", 
             { 
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
               },
-              body:JSON.stringify(details),
+              body:JSON.stringify({
+                name: details.stud_name,
+                course: details.stud_std,
+                toEmail: details.stud_email
+              })
             })
             setisloading(false)
             setDetails({stud_name: "", stud_email: "", stud_phone: "", stud_std: ""});
