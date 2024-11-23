@@ -115,8 +115,8 @@ export function Home() {
     }
 
     return ( 
-      <>
-        <RunningText text="Admissions open for Online Classes for JAM and TRB Chemistry 👨‍🎓 Limited seats Available. Register Now ✨ Any Queries contact 📞 9486552761" />
+      <div className='bg-gradient-to-br from-blue-50 via-white to-purple-50'>
+        <RunningText text="Admissions open for Online Classes of JAM and TRB Chemistry 👨‍🎓 Limited seats Available. Register Now ✨ Any Queries contact 📞 9486552761" />
         {popup && <Register popup={popup} handlePopup={handlePopup} handleChange={handleChange} details={details} handlesubmit={handlesubmit} isloading={isloading} setisloading={setisloading}/>}
 
         <ChemistryHero companyName={companyName} handlePopup={handlePopup} />
@@ -209,10 +209,8 @@ export function Home() {
         </section>
         <VideoShowcase />
         <FacultyShowcase />
-        <div className='bg-gradient-to-b from-blue-50 to-white'>
-          <TestimonialsCarousel />
-          <Footer />
-        </div>
-      </>
+        <TestimonialsCarousel />
+        <Footer />
+      </div>
     );
 }

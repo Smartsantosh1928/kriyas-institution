@@ -19,7 +19,7 @@ export const registrationData = [
     "Enery And Green Auditing",
     "Assistance in NAAC",
     "Assistance in NBA",
-    "Assistance in NERF"
+    "Assistance in NIRF"
   ];
   
   export default registrationData;

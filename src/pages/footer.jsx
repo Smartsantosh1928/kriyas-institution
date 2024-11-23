@@ -27,7 +27,7 @@ export function Footer({ title, description,  socials, menus, copyright }) {
                   href={path}
                   target="_blank"
                 >
-                  <IconButton color="white" className="rounded-full flex justify-center items-center">
+                  <IconButton color="white" className="w-16 h-16 rounded-full flex justify-center items-center">
                     <Typography color={color}>
                     {name == "youtubesvg" ? (<img src={youtubesvg} alt="YT" className='h-fit w-fit'/>)
                     : name === "callsvg" ? (<img src={callsvg} alt="Call" className='h-8 w-8'/>)

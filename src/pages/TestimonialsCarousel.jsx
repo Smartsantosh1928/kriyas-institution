@@ -1,39 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, Beaker, Atom } from 'lucide-react';
 
 const testimonials = [
   {
     id: 1,
     name: "Dr. Priya Sharma",
-    role: "Ph.D. in Organic Chemistry '23",
-    content: "The rigorous research opportunities and state-of-the-art laboratories at this institution provided the perfect environment for my academic and professional growth. The guidance from world-class faculty was instrumental in my successful transition to a leading pharmaceutical company.",
-    image: "/img/female-unknown.jpg"
+    grade: "Ph.D. in Organic Chemistry '23",
+    text: "The rigorous research opportunities and state-of-the-art laboratories at this institution provided the perfect environment for my academic and professional growth. The guidance from world-class faculty was instrumental in my successful transition to a leading pharmaceutical company.",
+    rating: 5
   },
   {
     id: 2,
     name: "Karthick",
-    role: "M.Sc. in Analytical Chemistry '22",
-    content: "The hands-on training with advanced instruments and exposure to real-world chemical challenges prepared me to excel in the industry. The collaborative learning atmosphere and exceptional mentorship made my experience truly enriching.",
-    image: "/img/male-unknown.jpg"
+    grade: "M.Sc. in Analytical Chemistry '22",
+    text: "The hands-on training with advanced instruments and exposure to real-world chemical challenges prepared me to excel in the industry. The collaborative learning atmosphere and exceptional mentorship made my experience truly enriching.",
+    rating: 5
   }
 ];
 
-export function TestimonialsCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+function TestimonialsCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }
+    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevSlide = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    }
+    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   useEffect(() => {
@@ -41,105 +34,84 @@ export function TestimonialsCarousel() {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimating(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, [currentIndex]);
-
   return (
-    <div className="relative py-16 sm:px-6 lg:px-8 px-10 bg-blue-50">
-      <div className="absolute inset-0">
-        <div className="absolute inset-y-0 left-0 w-1/2" />
-      </div>
-      
-      <div className="relative max-w-7xl mx-auto">
+    <div className="h-full mx-5 my-10 flex items-center justify-center p-4">
+      <div className="max-w-4xl w-full">
+        {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            What Our Students Say
-          </h2>
-          <p className="mt-4 text-xl text-gray-500">
-            Hear from our community of learners and alumni
-          </p>
+          <div className="flex justify-center items-center gap-3 mb-4">
+            <Beaker className="w-8 h-8 text-indigo-600" />
+            <h1 className="text-xl lg:text-4xl font-bold text-gray-900">Student Success Stories</h1>
+            <Atom className="w-8 h-8 text-indigo-600" />
+          </div>
+          <p className="text-indigo-600 text-lg font-medium">Hear from our chemistry scholars</p>
         </div>
 
-        <div className="relative px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <div className="relative">
-              <div className="overflow-hidden">
-                <div
-                  className="relative flex transition-transform duration-500 ease-in-out"
-                  style={{
-                    transform: `translateX(-${currentIndex * 100}%)`,
-                  }}
-                >
-                  {testimonials.map((testimonial) => (
-                    <div
-                      key={testimonial.id}
-                      className="w-full flex-shrink-0 px-4"
-                    >
-                      <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center">
-                        <div className="relative">
-                          <img
-                            className="h-24 w-24 rounded-full object-cover border-4 border-white shadow-lg"
-                            src={testimonial.image}
-                            alt={testimonial.name}
-                          />
-                          <div className="absolute -top-2 -right-2 bg-blue-500 rounded-full p-2">
-                            <Quote className="h-4 w-4 text-white" />
-                          </div>
+        {/* Testimonial Carousel */}
+        <div className="relative bg-white rounded-2xl px-10 lg:px-20 py-8 shadow-xl border border-indigo-100">
+          <div className="overflow-hidden">
+            <div className="transition-transform duration-500 ease-out"
+                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+              <div className="flex">
+                {testimonials.map((testimonial) => (
+                  <div key={testimonial.id} 
+                       className="w-full flex-shrink-0 px-4">
+                    <div className="h-full flex flex-col justify-between">
+                      <div>
+                        <div className="flex gap-1 mb-4">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} 
+                                  className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                          ))}
                         </div>
-                        
-                        <blockquote className="mt-8 text-center">
-                          <p className="text-lg text-gray-700 italic leading-relaxed">
-                            "{testimonial.content}"
-                          </p>
-                        </blockquote>
-                        
-                        <div className="mt-6 text-center">
-                          <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                          <p className="text-sm text-blue-600">{testimonial.role}</p>
-                        </div>
+                        <p className="text-gray-700 text-lg italic mb-6">
+                          "{testimonial.text}"
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-900">
+                          {testimonial.name}
+                        </h3>
+                        <p className="text-indigo-600">{testimonial.grade}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              <button
-                onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors duration-200"
-                disabled={isAnimating}
-              >
-                <ChevronLeft className="h-6 w-6 text-gray-600" />
-              </button>
-
-              <button
-                onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors duration-200"
-                disabled={isAnimating}
-              >
-                <ChevronRight className="h-6 w-6 text-gray-600" />
-              </button>
-
-              <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-2 mt-8">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`h-2 w-2 rounded-full transition-colors duration-200 ${
-                      index === currentIndex ? 'bg-blue-600' : 'bg-gray-300'
-                    }`}
-                    onClick={() => setCurrentIndex(index)}
-                  />
+                  </div>
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <button 
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-indigo-100 hover:bg-indigo-200 transition-colors text-indigo-600"
+            aria-label="Previous testimonial">
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button 
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-indigo-100 hover:bg-indigo-200 transition-colors text-indigo-600"
+            aria-label="Next testimonial">
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  currentSlide === index ? 'bg-indigo-600' : 'bg-indigo-200'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default TestimonialsCarousel;

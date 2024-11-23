@@ -39,7 +39,7 @@ export const EducationalServices = () => {
     },
     {
       title: "Online Tutions",
-      description: "Expert tutoring in various subjects with personalized attention and comprehensive study materials.",
+      description: "Expert tutoring in chemistry with personalized attention and comprehensive study materials.",
       icon: BookOpen,
       features: [
         "CBSE",
@@ -51,7 +51,7 @@ export const EducationalServices = () => {
     },
     {
       title: "Research Assistance",
-      description: "Comprehensive assistance for students pursuing research education opportunities.",
+      description: "Comprehensive assistance for students pursuing research education.",
       icon: Globe2,
       features: [
         "Thesis writing assistance",
@@ -72,7 +72,7 @@ export const EducationalServices = () => {
   });
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+    <div className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">

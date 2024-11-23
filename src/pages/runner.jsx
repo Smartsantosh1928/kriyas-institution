@@ -18,7 +18,7 @@ useEffect(() => {
 
 return (
     <>
-    <div className="relative w-full h-10 overflow-hidden bg-gray-200 text-blue-500 marquee">
+    <div className="relative w-full h-10 overflow-hidden text-blue-500 marquee">
         <p className="absolute my-2 p-0 w-max ani font-extrabold">{text}</p>
     </div>
     </>

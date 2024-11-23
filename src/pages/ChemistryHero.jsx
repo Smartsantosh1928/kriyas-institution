@@ -22,7 +22,7 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
 }
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Animated Background Elements */}
       <div className='w-full h-auto flex md:flex-row p-5 flex-col'>
           <img src="/img/logo.png" alt="LOGO" className='w-28 h-28 md:w-40 md:h-40 mr-3'/>
@@ -97,7 +97,7 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
             <div className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className="text-sm lg:font-medium text-gray-600">Live Classes Available (Both Online & Offline)</span>
+                <span className="text-sm lg:font-medium text-gray-600">Live Classes (Both Online & Offline)</span>
               </div>
             </div>
             
