@@ -20,7 +20,7 @@ export const EducationalServices = () => {
         "JAM (Joint Admission Test for Masters)",
         "CSIR (Council of Scientific and Industrial Research)",
         "GATE (Graduate Aptitude Test in Engineering)",
-        "APSET , GRE (Graduate Record Examinations)"
+        "AP, SAT , GRE (Graduate Record Examinations)"
       ],
       color: "blue"
     },

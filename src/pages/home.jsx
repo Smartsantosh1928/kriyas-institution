@@ -191,9 +191,9 @@ export function Home() {
                     Post Doc (IITM)
                   </Typography>
                   <div className="mb-16 flex items-center justify-center gap-2">
-                    <BriefcaseIcon className="-mt-px h-4 w-4 text-blue-gray-700" />
-                    <Typography className="font-medium text-xl text-blue-gray-700">
-                    Founder and CEO of {companyName}
+                    <BriefcaseIcon className="-mt-px h-6 w-6 text-blue-gray-700" />
+                    <Typography className="font-medium text-lg md:text-xl text-blue-gray-700">
+                      Founder and CEO of {companyName}
                     </Typography>
                   </div>
                 </div>

@@ -6,14 +6,14 @@ const testimonials = [
     id: 1,
     name: "Dr. Priya Sharma",
     grade: "Ph.D. in Organic Chemistry '23",
-    text: "The rigorous research opportunities and state-of-the-art laboratories at this institution provided the perfect environment for my academic and professional growth. The guidance from world-class faculty was instrumental in my successful transition to a leading pharmaceutical company.",
+    text: "The Institution research guidance provided the perfect environment for my academic and professional growth. The guidance from world-class faculty was instrumental in my successful transition to a leading pharmaceutical company.",
     rating: 5
   },
   {
     id: 2,
     name: "Karthick",
     grade: "M.Sc. in Analytical Chemistry '22",
-    text: "The hands-on training with advanced instruments and exposure to real-world chemical challenges prepared me to excel in the industry. The collaborative learning atmosphere and exceptional mentorship made my experience truly enriching.",
+    text: "Their expertise and guidance equipped me with the skills to excel in the industry. The supportive learning environment and outstanding mentorship made my experience deeply enriching and rewarding.",
     rating: 5
   }
 ];
