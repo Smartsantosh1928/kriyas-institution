@@ -74,7 +74,7 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
               
               <div className="flex items-center justify-center lg:justify-start gap-4 text-gray-600 hover:text-blue-600 transition-colors">
                 <Mail className="w-5 h-5" />
-                <a href="mailto:maheswarivaseekaranmail.com" className="text-lg">maheswarivaseekaran@gmail.com</a>
+                <a href="mailto:maheswarivaseekaran@gmail.com" className="text-lg">maheswarivaseekaran@gmail.com</a>
               </div>
             </div>
           </div>

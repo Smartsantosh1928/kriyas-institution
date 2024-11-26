@@ -33,7 +33,7 @@ return <div className="fixed inset-0  bg-black bg-opacity-50 z-50  w-full h-full
             <input type="text" label="Phone" size="lg" name="stud_phone" onChange={handleChange} placeholder="Type your Mobile Number here" className='outline rounded-md p-2 outline-blue-300'/>
               <span>Select Course/ Tution/ Assistance</span>
             <select label="Select Class" name="stud_std" value={details.stud_std} onChange={handleChange} className='outline rounded-md p-2 outline-blue-300'>
-              <option value="" disabled defaultValue={""}>Select Standard</option>
+              <option value="" disabled defaultValue={""}>Select Course/ Tution/ Assistance</option>
               {registrationData.map((course, index) => {
                 return <option key={index} value={course}>{course}</option>
               })}

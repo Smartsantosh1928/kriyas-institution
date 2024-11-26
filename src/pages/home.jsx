@@ -44,7 +44,7 @@ export function Home() {
       else if(details.stud_phone == "" || details.stud_phone == undefined)
       Swal.fire({icon:"warning",title:"Please Enter Your Mobile Number"})
       else if(details.stud_std == "" || details.stud_std == undefined)
-      Swal.fire({icon:"warning",title:"Please Select Your Standard"})
+      Swal.fire({icon:"warning",title:"Please Select Any Course"})
       else
       {
         setisloading(true)
