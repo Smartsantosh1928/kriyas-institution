@@ -68,7 +68,8 @@ export function Home() {
               body:JSON.stringify({
                 name: details.stud_name,
                 course: details.stud_std,
-                toEmail: details.stud_email
+                toEmail: details.stud_email,
+                phone: details.stud_phone
               })
             })
             setisloading(false)
