@@ -36,7 +36,7 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+      <div className="relative w-full mx-auto px-4 sm:px-6 lg:px-40 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center p-5">
           {/* Left Content */}
           <div className="text-center lg:text-left">
@@ -46,12 +46,12 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
               <Dna className="w-5 h-5 text-blue-600 ml-2 animate-pulse" />
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-              Master Chemistry with Expert Guidance
+            <h1 className="text-xl lg:text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+              Welcome to Kriya's Institution! The Best Online Chemistry Coaching Platform for Competitive Exams, online tuitions and Higher Education Consulting!
             </h1>
 
             <p className="text-lg text-gray-600 mb-8 max-w-2xl">
-              Join Kriya's Institution for comprehensive chemistry education. Expert faculty, proven methods, and dedicated support for JAM, CSIR-NET, NEET, and JEE preparation.
+              Kriya's Institution is your ultimate destination for expert chemistry tutoring, offering affordable online classes for students preparing for exams like NEET, JEE, JAM, GATE, and CSIR-NET. Our interactive learning platform features live and recorded classes, personalized school chemistry tuition, and virtual lab experiments, ensuring conceptual clarity and comprehensive syllabus coverage. Whether you're aiming for CBSE, ICSE, or State Board exams, our top-notch tutors provide customized guidance to achieve exceptional results. Prepare for JEE Chemistry 2025, tackle NEET Chemistry problem-solving, and master JAM Chemistry preparation with our crash courses and mock tests. As a one-stop platform for online coaching in India, we also offer ISO consultancy services, NAAC accreditation assistance, and support for doctoral thesis and project proposal writing. Join Kriya's Institution today for unparalleled chemistry learning and expert exam coaching that bridges the gap to academic success!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
