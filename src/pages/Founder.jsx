@@ -31,13 +31,13 @@ const FounderProfile = ({ name, title, photoUrl, achievements, experience }) => 
   </div>
 );
 
-export function Founder({ companyName }) {
-  const handleScroll = () => {
-    window.scroll({
-      top: 1700,
-      behavior: 'smooth',
-    });
-  };
+export function Founder({ companyName, handleScroll }) {
+  // const handleScroll = () => {
+  //   window.scroll({
+  //     top: 1700,
+  //     behavior: 'smooth',
+  //   });
+  // };
 
   return (
     <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">

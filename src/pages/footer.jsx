@@ -14,13 +14,13 @@ export function Footer({ title, description,  socials, menus, copyright }) {
       <div className="container mx-auto">
         <div className="flex flex-wrap pt-6 text-center md:justify-center">
           <div className="w-full px-4 lg:w-6/12">
-            <Typography variant="h2" className="mb-4 edu" color="gray">
+            <Typography variant="h2" className="mb-4 edu text-xl md:text-3xl" color="gray">
               {title}
             </Typography>
-            <Typography className="font-normal text-blue-gray-500 text-2xl">
+            <Typography className="font-normal text-blue-gray-500 text-lg md:text-2xl">
               {description}
             </Typography>
-            <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-center">
+            <div className="mx-auto mt-6 flex justify-center gap-2 md:mb-0 lg:justify-center">
               {socials.map(({ color, name,  path }, index) => (
                 <a
                   key={index}

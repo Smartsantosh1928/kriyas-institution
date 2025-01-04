@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Footer } from "./footer";
 import { useState } from 'react';
 import Swal from 'sweetalert2';
@@ -113,6 +113,11 @@ export function Home() {
         }
       }, 5000);
     },[])
+    
+    const sectionRef = useRef(null);
+    const scrollTOCourses = () => {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
 
     return ( 
       <div className='bg-gradient-to-br from-blue-50 via-white to-purple-50'>
@@ -121,11 +126,11 @@ export function Home() {
 
         <ChemistryHero companyName={companyName} handlePopup={handlePopup} />
         <EducationFeatures handlePopup={handlePopup} />
-        <EducationalServices />
+        <EducationalServices sectionRef={sectionRef} />
         <VideoShowcase />
         <FacultyShowcase />
         <TestimonialsCarousel />
-        <Founder companyName={companyName} />
+        <Founder companyName={companyName} handleScroll={scrollTOCourses} />
         <FacultyGrid facultyMembers={facultyData} />
         <Footer />
         

@@ -30,14 +30,6 @@ export function FacultyCard({ faculty }) {
             </div>
             <span>{faculty.work}</span>
           </div>
-          {/* <div className="flex items-center text-gray-600">
-            <Mail className="w-4 h-4 mr-2" />
-            <span>{faculty.email}</span>
-          </div>
-          <div className="flex items-center text-gray-600">
-            <Phone className="w-4 h-4 mr-2" />
-            <span>{faculty.phone}</span>
-          </div> */}
         </div>
       </div>
     </div>

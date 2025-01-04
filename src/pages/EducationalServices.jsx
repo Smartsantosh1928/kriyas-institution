@@ -1,16 +1,13 @@
 import React from 'react';
 import { 
   GraduationCap, 
-  Users, 
   BookOpen, 
   Target, 
-  Globe2, 
-  Award,
-  ArrowRight,
+  Globe2,
   CheckCircle2
 } from 'lucide-react';
 
-export const EducationalServices = () => {
+export const EducationalServices = ({ sectionRef }) => {
   const services = [
     {
       title: "Online Coaching",
@@ -72,7 +69,7 @@ export const EducationalServices = () => {
   });
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8">
+    <div ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
