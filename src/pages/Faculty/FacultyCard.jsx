@@ -15,9 +15,13 @@ export function FacultyCard({ faculty }) {
         <h3 className="text-xl font-semibold text-gray-800">
           {faculty.Name}
         </h3>
-        <p className="text-indigo-600 font-medium">{faculty.designation}</p>
+        <div className="flex items-center gap-2 mt-2 text-indigo-600">
+          <GraduationCap className="w-4 h-4" />
+          <span className="text-sm">{faculty.designation}</span>
+        </div>
+        {/* <p className="text-indigo-600 font-medium">{faculty.designation}</p> */}
         
-        <div className="mt-4 space-y-2">
+        {/* <div className="mt-4 space-y-2">
           <div className="flex items-center text-gray-600">
             <div className={`w-5 h-5 flex-shrink-0 mr-2 mt-1`}>
               <GraduationCap className="w-full h-full" />
@@ -30,7 +34,7 @@ export function FacultyCard({ faculty }) {
             </div>
             <span>{faculty.work}</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

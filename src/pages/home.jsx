@@ -129,9 +129,9 @@ export function Home() {
         <EducationalServices sectionRef={sectionRef} />
         <VideoShowcase />
         <FacultyShowcase />
-        <TestimonialsCarousel />
         <Founder companyName={companyName} handleScroll={scrollTOCourses} />
         <FacultyGrid facultyMembers={facultyData} />
+        <TestimonialsCarousel />
         <Footer />
         
       </div>

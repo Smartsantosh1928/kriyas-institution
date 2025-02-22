@@ -7,7 +7,7 @@ const DirectorCard = ({ name, title, photoUrl, achievements, experience, role })
       <Award className="w-24 h-24 text-white" />
     </div>
     <h3 className="mt-4 text-xl font-bold text-gray-900">{name}</h3>
-    <p className="text-md text-gray-600">{title}</p>
+    {/* <p className="text-md text-gray-600">{title}</p> */}
     
     <div className="flex items-center gap-2 mt-2 text-indigo-600">
       <Briefcase className="w-4 h-4" />

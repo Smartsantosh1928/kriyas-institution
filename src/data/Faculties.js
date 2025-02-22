@@ -9,7 +9,7 @@ const facultyData = [
   },
   {
     id: '2',
-    Name: 'Dr. Murugesan Sankarganesh, M.Sc., Ph.D.,',
+    Name: 'Dr. Murugesan Sankarganesh',
     designation: 'Faculty',
     work: 'Saveetha School of Engineering, Saveetha Institute of Medical and Technical Sciences (SIMATS)',
     education: 'Assistant Professor (SG), Department of Chemistry',
