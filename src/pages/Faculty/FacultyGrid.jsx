@@ -11,11 +11,18 @@ export function FacultyGrid({ facultyMembers }) {
           Kriya's Institution
         </span>
       </h1>
+      <div className='flex flex-col gap-20'> 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 text-left">
-          {facultyMembers.map((faculty) => (
+          {facultyMembers.slice(0,3).map((faculty) => (
             <FacultyCard key={faculty.id} faculty={faculty} />
           ))}
         </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 text-left">
+          {facultyMembers.slice(3).map((faculty) => (
+            <FacultyCard key={faculty.id} faculty={faculty} />
+          ))}
+        </div>
+      </div>
       </div>
     </div>
   );

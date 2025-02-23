@@ -115,7 +115,7 @@ export const FacultyShowcase = () => {
                           <h3 className="hidden lg:block text-2xl font-bold text-white mb-2">
                             {feature.title}
                           </h3>
-                          <p className="text-blue-100 leading-relaxed mb-4">
+                          <p className="text-blue-100 leading-relaxed mb-4 text-justify">
                             {feature.description}
                           </p>
                           <div className="flex items-center text-cyan-300 text-sm font-semibold">

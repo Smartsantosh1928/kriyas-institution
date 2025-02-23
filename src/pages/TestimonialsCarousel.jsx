@@ -4,16 +4,42 @@ import { Star, ChevronLeft, ChevronRight, Beaker, Atom } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: "Dr. Priya Sharma",
-    grade: "Ph.D. in Organic Chemistry '23",
-    text: "The Institution research guidance provided the perfect environment for my academic and professional growth. The guidance from world-class faculty was instrumental in my successful transition to a leading pharmaceutical company.",
+    name: "Ananya R.,",
+    title: "Best Chemistry Coaching Ever!",
+    grade: "NEET Aspirant",
+    text: "Dr. Maheswari's teaching style is amazing! She makes even the toughest concepts in organic and inorganic chemistry easy to understand. Her tricks and shortcuts helped me a lot in my NEET and JEE preparation. Highly recommended!",
     rating: 5
   },
   {
     id: 2,
-    name: "Karthick",
-    grade: "M.Sc. in Analytical Chemistry '22",
-    text: "Their expertise and guidance equipped me with the skills to excel in the industry. The supportive learning environment and outstanding mentorship made my experience deeply enriching and rewarding.",
+    name: "Rahul S.,",
+    title: "Concepts Made Crystal Clear!",
+    grade: "IIT JAM Student",
+    text: "Before joining Kriya's Institution, chemistry felt like a nightmare. But after learning from Ma'am, I gained confidence and improved my problem-solving skills. Her JAM exam preparation strategy is top-notch!",
+    rating: 5
+  },
+  {
+    id: 3,
+    name: "Megha K.,",
+    title: "Interactive & Engaging Classes!",
+    grade: "CSIR-NET Aspirant",
+    text: "The online classes are well-structured, and the smart board explanations make learning fun. Ma'am explains every concept in detail and ensures we understand before moving forward. She is the best mentor for CSIR-NET and GATE chemistry!",
+    rating: 5
+  },
+  {
+    id: 4,
+    name: "Vikram M.,",
+    title: "Helped Me Score High in Board Exams!",
+    grade: "CBSE Class 12 Student",
+    text: "Kriya's Institution has been a game-changer for my CBSE board exam preparation. The mock tests, practice questions, and Ma'am's step-by-step explanations made chemistry my favorite subject!",
+    rating: 5
+  },
+  {
+    id: 5,
+    name: "Pooja T.,",
+    title: "A Perfect Guide for Competitive Exams!",
+    grade: "JEE Aspirant",
+    text: "I struggled with physical chemistry, but after attending Kriya's classes, I started solving problems quickly. Ma'am's way of linking real-life applications to chemistry makes learning interesting!",
     rating: 5
   }
 ];
@@ -64,7 +90,10 @@ function TestimonialsCarousel() {
                                   className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
-                        <p className="text-gray-700 text-lg italic mb-6">
+                        <p className='text-2xl underline font-light text-gray-900 mb-5 text-justify' >
+                          {testimonial.title}
+                        </p>
+                        <p className="text-gray-700 text-lg italic mb-6 text-justify">
                           "{testimonial.text}"
                         </p>
                       </div>

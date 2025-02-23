@@ -83,7 +83,7 @@ export const ChemistryHero = ({ companyName, handlePopup }) => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 rounded-3xl transform rotate-3"></div>
             <img
-              src="/img/hero-img.avif"
+              src="/img/Hero.jpg"
               alt="Chemistry Education"
               className="relative rounded-3xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500"
             />
