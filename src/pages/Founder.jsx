@@ -2,7 +2,7 @@ import React from 'react';
 import { Award, Briefcase, Play, Quote } from 'lucide-react';
 import DirectorsSection from './Faculty/DirectorsSection'
 
-const FounderProfile = ({ name, title, photoUrl, achievements, experience, companyName }) => (
+const FounderProfile = ({ name, title, photoUrl, achievements, experience, companyName, handleScroll }) => (
   <div className="flex flex-col items-center gap-5">
     <div className="relative">
       <img
@@ -39,7 +39,7 @@ const FounderProfile = ({ name, title, photoUrl, achievements, experience, compa
       </div>
       
       <button
-        // onClick={handleScroll}
+        onClick={handleScroll}
         className="group flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
       >
         <span>Explore Courses</span>
@@ -61,6 +61,7 @@ export function Founder({ companyName, handleScroll }) {
             achievements={5}
             experience={15}
             companyName={companyName}
+            handleScroll={handleScroll}
           />
 
           <div className='flex justify-center items-center'>
