@@ -121,7 +121,7 @@ export function Home() {
 
     return ( 
       <div className='bg-gradient-to-br from-blue-50 via-white to-purple-50'>
-        <RunningText text="Admissions open for Online Classes of JAM and TRB Chemistry 👨‍🎓 Limited seats Available. Register Now ✨ Any Queries contact 📞 9486552761" />
+        <RunningText text="Admissions open for CSIR - Net, GATE, JAM, NEET and Chemistry Tuitions. Register Now ✨ Any Queries contact 📞 9486552761" />
         {popup && <Register popup={popup} handlePopup={handlePopup} handleChange={handleChange} details={details} handlesubmit={handlesubmit} isloading={isloading} setisloading={setisloading}/>}
 
         <ChemistryHero companyName={companyName} handlePopup={handlePopup} />
